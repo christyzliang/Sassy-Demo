@@ -1,0 +1,31 @@
+// VARIABLES
+$mybodybackground: rgb(255, 255, 255);
+$body-font-family: 'quiche-sans', sans-serif;
+$heading-font-family: 'moderno-fb', serif;
+
+// COLORS
+$color-text-body: rgba(0,0,0,.8);
+$color-accent: rgb(31, 134, 138);
+$color-midgrey: rgba(0,0,0,.5);
+$color-links: rgb(31, 134, 138);
+$color-links-dark: #035;
+$color-hero-bg: rgb(27, 73, 85);
+
+//BREAKPOINTS
+$breakpoint-small: 786px;
+$breakpoint-medium: 1050px;
+$breakpoint-large: 1250px;
+
+//IMPORT PARTIALS
+@import "partials/toc";  
+@import "partials/typography";
+@import "partials/buttons";
+@import "partials/media";
+@import "partials/layout";
+@import "partials/grid";
+@import "partials/structure";
+
+
+body {
+    background-color: $mybodybackground;
+}

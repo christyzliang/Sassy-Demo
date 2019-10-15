@@ -1,0 +1,51 @@
+  
+/* Grid */
+// THIS IS A SIMPLE SEMANTIC GRID
+// 1/2 COL, 1/3 COL, ETC
+
+$gutter-width: 1%;
+
+.row  .column { margin-bottom: $gutter-width; } 
+@media (max-width: $breakpoint-small - 1) {
+    .row {
+        margin-bottom: 6em;
+    }
+}
+
+// FLEXBOX 
+@media (min-width: $breakpoint-small) {
+    .row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -$gutter-width/2;
+        margin-right: -$gutter-width/2;
+
+        &.swap {
+            flex-direction: row-reverse;}
+        &.center {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .column {
+            flex-grow: 1; 
+            margin: $gutter-width/2;
+
+            &.one-half { width: 50%-$gutter-width; }
+            &.one-third { width: 33.3333%-$gutter-width; }
+            &.two-thirds { width: 66.6666%-$gutter-width; }
+            &.one-fourth { width: 25%-$gutter-width; }
+
+        }
+    }
+}
+
+ .row.demo {
+    //  background: yellow;
+    .column {
+        background: rgba(0,0,0,.5);
+        padding: 1em;
+        text-align: center;
+    }
+}

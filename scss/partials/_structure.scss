@@ -1,0 +1,67 @@
+/* Site Header */
+.site-header, .site-footer {
+    background-color: $color-accent;
+    padding: 1em;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+
+    h1 {
+        font-family: $heading-font-family;
+        font-size: 1.5em;
+        margin: .5em 0 0 0; /* To adjust baseline with nav text */
+    }
+    a {
+        color: #ffffff;
+        text-decoration: none; 
+    }
+}
+/* Site Header */
+.site-header {
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+}
+
+/* Site Footer */
+.site-footer {
+    justify-content: center;
+    margin-top: 6em;
+}
+
+/* Site Navigation */
+.site-nav {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+    }
+
+    a {
+        display: block;
+        padding: 1em;
+    }
+}
+
+section {
+    padding: 6em 0;
+    display: grid;
+    place-items: center;
+}
+
+/* Site Hero */
+.hero {
+    background-color: $color-hero-bg;
+    // background-image: url('https://picsum.photos/id/1002/1600/1200')
+    // background-size: cover;
+    padding: 15% 1em;
+    text-align: center;
+    color: #fff;
+
+
+    p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
