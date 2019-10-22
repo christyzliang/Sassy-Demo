@@ -56,12 +56,47 @@ section {
     // background-image: url('https://picsum.photos/id/1002/1600/1200')
     // background-size: cover;
     padding: 15% 1em;
-    text-align: center;
+    // text-align: center;
     color: #fff;
 
-
-    p {
-        margin-left: auto;
-        margin-right: auto;
+    h2 {
+        font-size: 4em;
     }
 }
+
+/* LAYOUT SECTION */
+#layout {
+    @media (min-width: $breakpoint-small) {}
+        .container {
+            display: flex;
+            align-items: center;
+        }
+
+        .img-block {
+            width: 50%;
+        }
+
+        .text-block {
+            width: 50%;
+            transform: translateX(-2em);
+        }
+}
+
+#split-cross-reversed {
+    @media (min-width: $breakpoint-small) {}
+        .container {
+            display: flex;
+            align-items: center;
+            flex-direction: row-reverse;
+        }
+
+        .img-block {
+            width: 50%;
+        }
+
+        .text-block {
+            width: 50%;
+            transform: translateX(2em);
+        }
+}
+
