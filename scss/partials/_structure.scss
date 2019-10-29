@@ -1,76 +1,112 @@
-/* Site Header */
+/* site header and footer */
 .site-header, .site-footer {
-    background-color: $color-accent;
+    background-color: $color-accent; 
     padding: 1em;
-    color: #ffffff;
+    color: #fff;
     display: flex;
     justify-content: space-between;
 
-    h1 {
-        font-family: $heading-font-family;
+    h1 { 
+        font-family: $body-font-family;
         font-size: 1.5em;
-        margin: .5em 0 0 0; /* To adjust baseline with nav text */
+        margin: .5em 0 0 0; /* to adjust baseline with nav text */
     }
     a {
-        color: #ffffff;
-        text-decoration: none; 
+        color: #fff;
+        text-decoration: none;
     }
 }
-/* Site Header */
+
+/* site header */
 .site-header {
     background-color: transparent;
     position: absolute;
     width: 100%;
 }
 
-/* Site Footer */
+/* site footer */
 .site-footer {
     justify-content: center;
     margin-top: 6em;
+    background-color: #000;
 }
 
-/* Site Navigation */
-.site-nav {
+.site-header .site-footer {
+    ul {
+        display: flex;
+        list-style: none;
+    }
+    a {
+        display: block;
+        padding: 1em;
+    }
+}
+
+/* site navigation */
+.site-header .site-nav {
     position: absolute;
-    display: grid;
-    place-items: center;
     width: 100%;
     top: 0;
     left: 0;
-
+    display: grid;
+    place-items: center;
+    transition: all 1s ease;
     ul {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         margin: 0;
         padding: 0;
         list-style: none;
-        display: none;
-        background: rgba(225, 0, 0, 1)
     }
-
+    li {
+        font-size: 2em;
+        transform: translateY(-30px);
+        opacity: 0;
+    }
     a {
         display: block;
         padding: 1em;
     }
 
-    &active {
+    &.active {
         position: fixed;
         height: 100%;
         z-index: 100;
-
         ul {
-            display: block;
+            top: 50%;
         }
-        background: red;
+        li {
+            transition: all .4s ease-out;
+            transform: translateY(0);  
+            opacity: 1;
+            &:nth-child() {
+                transition-delay: 0;
+            } 
+            &:nth-child(1) {
+                transition-delay: 0.2s;
+            } 
+            &:nth-child(2) {
+                transition-delay: 0.4s;
+            } 
+            &:nth-child(3) {
+                transition-delay: 0.6s;
+            }
+        }
+        background: rgb(31, 134, 138);
     }
 }
+
 /* MENU BUTTON */
 .menu-button {
     position: absolute;
+    z-index: 100;
     top: 2em;
     right: 2em;
     cursor: pointer;
 }
 
-/* SECTION */
 section {
     padding: 6em 0;
     min-height: 100vh;
@@ -78,18 +114,58 @@ section {
     place-items: center;
 }
 
-/* Site Hero */
+/* Hero Sections */
 .hero {
     background-color: $color-hero-bg;
-    // background-image: url('https://picsum.photos/id/1002/1600/1200')
+    // background-image: url('https://picsum.photos/id/1019/1600/1200');
     // background-size: cover;
-    padding: 15% 1em;
-    text-align: center;
+    padding: 6em 1em;
     color: #fff;
 
-
-    p {
-        margin-left: auto;
-        margin-right: auto;
+    h2 {
+        font-size: 4em;
+        margin: 0;
     }
 }
+
+/* Layout section */
+.split-crossed-left {
+
+    @media (min-width: $breakpoint-small) {
+        .container {
+            display: flex;
+            align-items: center;
+        }
+
+        .image-block {
+            width: 50%;
+        }
+
+        .text-block {
+            width: 50%;
+            transform: translateX(-2em);
+        }
+    }
+
+}
+
+.split-crossed-reversed {
+    
+        @media (min-width: $breakpoint-small) {
+            .container {
+                display: flex;
+                align-items: center;
+                flex-direction: row-reverse;
+            }
+    
+            .image-block {
+                width: 50%;
+            }
+    
+            .text-block {
+                width: 50%;
+                transform: translateX(2em);
+            }
+        }
+    
+    }
