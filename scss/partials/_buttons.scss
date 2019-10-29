@@ -1,47 +1,46 @@
-// BUTTONS
-
-
+/* BUTTONS */
 button,
 .button {
-    background-color: $color-hero-bg;
-    color: #ffffff;
-    font-family: $body-font-family;
     font-size: inherit;
+    font-family: $body-font-family;
     line-height: 1;
-    padding: 1em;
+    background-color: $color-links;
+    color: #fff; 
+    padding: 1em 2em;
     display: inline-block;
-    margin : .5em;
+    margin: .5em;
     border-radius: .5em;
     border: 1px solid $color-links;
-    text-decoration: none;
     cursor: pointer;
+    text-decoration: none;
 
     &:hover {
-        background-color: #ffffff;
-        color: #000;
+        background-color: $color-links-dark;
+        color: #fff; 
         border-color: $color-links-dark;
     }
 
-    &:alt {
+    &.alt {
         color: $color-links-dark;
-        background-color: #ffffff;
+        background-color: #fff; 
 
         &:hover {
             background-color: $color-links-dark;
-            color: #ffffff;
+            color: #fff; 
             border-color: $color-links-dark;
         }
+
     }
 
     &.dark {
-        color:#ffffff;
-        background-color: transparent;
-        border-color: #ffffff;
+        color: #fff;
+        background-color: transparent; 
+        border-color: #fff;
+
+        &:hover {
+            background-color: #fff;
+            color: #000; 
+        }
     }
 
-        &.hover {
-            background-color: #ffffff;
-            color: #000;
-        }
 }
-
