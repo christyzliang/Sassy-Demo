@@ -263,13 +263,13 @@ body {
   margin-top: 6em;
   background-color: #000; }
 
-.site-header .site-footer ul {
+.site-footer .site-nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   list-style: none; }
 
-.site-header .site-footer a {
+.site-footer .site-nav a {
   display: block;
   padding: 1em; }
 
@@ -303,7 +303,7 @@ body {
     opacity: 0; }
   .site-header .site-nav a {
     display: block;
-    padding: 1em; }
+    padding: .5em; }
   .site-header .site-nav.active {
     position: fixed;
     height: 100%;
@@ -339,10 +339,38 @@ body {
 /* MENU BUTTON */
 .menu-button {
   position: absolute;
-  z-index: 100;
+  z-index: 200;
   top: 2em;
   right: 2em;
   cursor: pointer; }
+
+.menu-button.navicon {
+  font-size: 1.75em;
+  line-height: .75;
+  text-align: center;
+  top: 1em;
+  right: 1em;
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+  line-height: 1; }
+  .menu-button.navicon:before {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    content: "\2630";
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0); }
+
+.active .menu-button.navicon:before {
+  content: "\2715";
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -webkit-transition: .4s all ease-out;
+  -o-transition: .4s all ease-out;
+  transition: .4s all ease-out; }
 
 section {
   padding: 6em 0;
@@ -396,6 +424,32 @@ section {
     -webkit-transform: translateX(2em);
     -ms-transform: translateX(2em);
     transform: translateX(2em); } }
+
+/* SCROLL TRIGGER ANIMATION */
+[data-scroll] {
+  -webkit-transition: opacity 1s;
+  -o-transition: opacity 1s;
+  transition: opacity 1s; }
+
+[data-scroll="out"] {
+  opacity: 0; }
+
+/* SPLIT_CROSS LEFT ANIMATION */
+[data-scroll].split-crossed-left .image-block,
+[data-scroll].split-crossed-left .text-block {
+  -webkit-transition: 1s ease-out transform;
+  -o-transition: 1s ease-out transform;
+  transition: 1s ease-out transform; }
+
+[data-scroll="out"].split-crossed-left .image-block {
+  -webkit-transform: translateX(2em);
+  -ms-transform: translateX(2em);
+  transform: translateX(2em); }
+
+[data-scroll="out"].split-crossed-left .text-block {
+  -webkit-transform: translateX(-4em);
+  -ms-transform: translateX(-4em);
+  transform: translateX(-4em); }
 
 body {
   background-color: white; }
